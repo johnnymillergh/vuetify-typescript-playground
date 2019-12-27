@@ -1,3 +1,25 @@
+## [0.1.1](https://github.com/johnnymillergh/vuetify-typescript-playground/compare/v0.1.0...v0.1.1) (2019-12-27)
+
+
+### Bug Fixes
+
+* **$Travis:** correct NPM command ([c20c7d2](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/c20c7d25194056a73da116489cfb86dd041925a5))
+* **$VueConfig:** fix ESLint problem ([02b2281](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/02b2281553a0557fb7b7931382c952380a6c65e0))
+
+
+### Features
+
+* **$Demo:** create Vuetify demo page ([80afc80](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/80afc804c594db618c8417820916f7d44658c48e))
+* **$Docker:** integrate Docker ([24e43db](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/24e43db4a9e8ea0275242638248e892bf6559964))
+* **$RouterView:** add router changing animation ([340f912](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/340f9122912fbdc0cd52c9f3a8104e41ed50d0c3))
+
+
+### Performance Improvements
+
+* **$package.json:** update dependencies ([453198f](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/453198f85790205ff9c094945437a5d9a67efbc0))
+
+
+
 # 0.1.0 (2019-12-27)
 
 
