@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  vuetify-typescript-playground:
+    container_name: vuetify-typescript-playground
+    image: "ijohnnymiller/vuetify-typescript-playground-test:${TAG}"
+    build:
+      dockerfile: Dockerfile
+      context: .
+      args:
+        ENV: test
+        ENV_ALIAS: test
+    ports:
+      - 8081:80

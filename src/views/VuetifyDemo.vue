@@ -1,5 +1,5 @@
 <template>
-  <div id="about-container">
+  <div id="vuetify-demo-container">
     <h1 class="text-center">This is an about page</h1>
     <v-container>
       <v-carousel cycle height="400" hide-delimiter-background show-arrows-on-hover>
@@ -119,7 +119,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'About',
+  name: 'VuetifyDemo',
   data: () => ({
     colors: ['indigo', 'warning', 'pink darken-2', 'red lighten-1', 'deep-purple accent-4'],
     slides: ['First', 'Second', 'Third', 'Fourth', 'Fifth'],
@@ -146,7 +146,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-#about-container {
+#vuetify-demo-container {
   #chip-container {
     margin-top: 24px;
   }
