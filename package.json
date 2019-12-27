@@ -1,6 +1,26 @@
 {
   "name": "vuetify-typescript-playground",
-  "version": "0.1.0-beta",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "description": "Vuetify Typescript Playground",
+  "author": {
+    "name": "Johnny Miller (锺俊)",
+    "email": "johnnysviva@outlook.com",
+    "url": "https://github.com/johnnymillergh/"
+  },
+  "bugs": {
+    "url": "https://github.com/johnnymillergh/vuetify-typescript-playground/issues/new",
+    "email": "johnnysviva@outlook.com"
+  },
+  "repository": {
+    "url": "https://github.com/johnnymillergh/vuetify-typescript-playground",
+    "type": "git"
+  },
+  "keywords": [
+    "vue",
+    "vuetify",
+    "typescript"
+  ],
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
