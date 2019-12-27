@@ -18,7 +18,7 @@
       <v-sheet class="text-center">
         <router-link to="/">Home</router-link>
         <span>|</span>
-        <router-link to="/about">About</router-link>
+        <router-link to="/vuetify-demo">Vuetify Demo</router-link>
       </v-sheet>
       <router-view/>
     </v-content>
