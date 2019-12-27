@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint --ext .ts,.js,.vue src",
-    "go:travis": "npm run clean && npm run lint && npm run test:unit && npm run build"
+    "go:travis": "npm run lint && npm run test:unit && npm run build"
   },
   "dependencies": {
     "@mdi/font": "4.7.95",
