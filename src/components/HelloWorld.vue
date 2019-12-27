@@ -1,6 +1,9 @@
 <!--suppress HtmlUnknownBooleanAttribute -->
 <template>
   <v-container>
+    <div class="text-center">
+      <v-sheet color="orange lighten-2">{{ msg }}</v-sheet>
+    </div>
     <v-layout text-center wrap>
       <v-flex xs12>
         <!--suppress HtmlUnknownTarget -->
@@ -55,10 +58,12 @@ export default class HelloWorld extends Vue {
 
 <!--suppress JSUnusedLocalSymbols, JSUnusedGlobalSymbols -->
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Prop, Vue } from 'vue-property-decorator'
 
 @Component
 export default class HelloWorld extends Vue {
+  @Prop() private msg!: string
+
   private ecosystem: object = [
     {
       text: 'vuetify-loader',
