@@ -18,26 +18,39 @@
       <v-sheet class="text-center">
         <router-link to="/">Home</router-link>
         <span>|</span>
-        <router-link to="/about">About</router-link>
+        <router-link to="/vuetify-demo">Vuetify Demo</router-link>
       </v-sheet>
-      <router-view/>
+      <transition name="fade-transform" mode="out-in">
+        <router-view class="app-container"/>
+      </transition>
     </v-content>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
 
 export default Vue.extend({
   name: 'App',
-
-  // components: {
-  //   HelloWorld
-  // },
-
   data: () => ({
     //
   })
 })
 </script>
+
+<!--suppress CssUnusedSymbol -->
+<style scoped>
+.fade-transform-leave-active, .fade-transform-enter-active {
+  transition: all .5s;
+}
+
+.fade-transform-enter {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+</style>
