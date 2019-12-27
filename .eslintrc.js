@@ -26,12 +26,12 @@ module.exports = {
 
     '@typescript-eslint/member-delimiter-style': ['error', {
       multiline: {
-        'delimiter': 'none',
-        'requireLast': false
+        delimiter: 'none',
+        requireLast: false
       },
       singleline: {
-        'delimiter': 'semi',
-        'requireLast': false
+        delimiter: 'semi',
+        requireLast: false
       }
     }],
 
@@ -42,7 +42,11 @@ module.exports = {
     'object-curly-spacing': [2, 'always', { objectsInObjects: false }],
     'array-bracket-spacing': [2, 'never'],
     'vue-libs/jsx-uses-vars': 2,
-    'vue/require-v-for-key': 0
+    'vue/require-v-for-key': 0,
+    'vue/html-indent': 'error',
+    'vue/html-quotes': 'error',
+    'vue/mustache-interpolation-spacing': 'error',
+    'vue/html-self-closing': 'error'
   },
   parserOptions: {
     parser: '@typescript-eslint/parser',

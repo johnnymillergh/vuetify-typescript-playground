@@ -1,3 +1,4 @@
+<!--suppress HtmlUnknownBooleanAttribute -->
 <template>
   <v-container>
     <v-layout text-center wrap>
@@ -52,6 +53,7 @@ export default class HelloWorld extends Vue {
 </script>
 -->
 
+<!--suppress JSUnusedLocalSymbols, JSUnusedGlobalSymbols -->
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 
