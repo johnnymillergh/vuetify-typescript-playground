@@ -78,6 +78,7 @@ export default class HelloWorld extends Vue {
       href: 'https://github.com/vuetifyjs/awesome-vuetify'
     }
   ]
+
   private importantLinks = [
     {
       text: 'Documentation',
@@ -100,6 +101,7 @@ export default class HelloWorld extends Vue {
       href: 'https://medium.com/vuetify'
     }
   ]
+
   private whatsNext = [
     {
       text: 'Explore components',
