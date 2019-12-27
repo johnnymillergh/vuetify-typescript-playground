@@ -15,7 +15,7 @@
       </v-btn>
     </v-app-bar>
     <v-content>
-      <HelloWorld/>
+      <hello-world/>
     </v-content>
   </v-app>
 </template>
