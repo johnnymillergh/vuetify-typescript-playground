@@ -1,3 +1,17 @@
+# [1.0.0](https://github.com/johnnymillergh/vuetify-typescript-playground/compare/v0.1.2...v1.0.0) (2019-12-30)
+
+
+### Features
+
+* **$App:** add AppUtil for getting package.json information ([566e956](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/566e95687c7db1283473806653c90dba6c8d76f3))
+
+
+### BREAKING CHANGES
+
+* **$App:** add AppUtil for getting package.json information
+
+
+
 ## [0.1.2](https://github.com/johnnymillergh/vuetify-typescript-playground/compare/v0.1.1...v0.1.2) (2019-12-30)
 
 
