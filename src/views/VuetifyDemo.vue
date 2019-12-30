@@ -2,7 +2,7 @@
   <div id="vuetify-demo-container">
     <h1 class="text-center">This is an about page</h1>
     <v-container>
-      <v-carousel cycle height="400" hide-delimiter-background show-arrows-on-hover>
+      <v-carousel cycle height="400" hide-delimiter-background show-arrows-on-hover v-ripple>
         <v-carousel-item v-for="(slide, i) in slides" :key="i">
           <v-sheet :color="colors[i]" height="100%">
             <v-row class="fill-height" align="center" justify="center">
