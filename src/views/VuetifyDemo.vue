@@ -2,7 +2,7 @@
   <div id="vuetify-demo-container">
     <h1 class="text-center">This is an about page</h1>
     <v-container>
-      <v-carousel cycle height="400" hide-delimiter-background show-arrows-on-hover>
+      <v-carousel cycle height="400" hide-delimiter-background show-arrows-on-hover v-ripple>
         <v-carousel-item v-for="(slide, i) in slides" :key="i">
           <v-sheet :color="colors[i]" height="100%">
             <v-row class="fill-height" align="center" justify="center">
@@ -39,8 +39,8 @@
           <v-list-item-avatar tile size="80" color="grey"/>
         </v-list-item>
         <v-card-actions>
-          <v-btn text v-throttled-click:2000="handleThrottledClickButton">Button</v-btn>
-          <v-btn text>Button</v-btn>
+          <v-btn text v-throttled-click:2000="handleThrottledClickButton">Throttle</v-btn>
+          <v-btn text v-debounced-click:2000="handleDebouncedClickButton">Debounce</v-btn>
         </v-card-actions>
       </v-card>
       <v-row align="center">
@@ -148,7 +148,10 @@ export default Vue.extend({
   },
   methods: {
     handleThrottledClickButton (event: Event) {
-      console.log('handleThrottledClickButton', event)
+      console.info('handleThrottledClickButton', event)
+    },
+    handleDebouncedClickButton (event: Event) {
+      console.info('handleDebouncedClickButton', event)
     },
     onResize () {
       this.windowSize = { x: window.innerWidth, y: window.innerHeight }
