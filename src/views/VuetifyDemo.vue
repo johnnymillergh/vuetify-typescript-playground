@@ -111,6 +111,9 @@
       <v-radio-group v-model="radioGroup">
         <v-radio v-for="n in 3" :key="n" :label="`Radio ${n}`" :value="n"/>
       </v-radio-group>
+      <v-container fluid>
+        <v-switch v-model="darkModeSwitch" :label="`darkModeSwitch: ${darkModeSwitch.toString()}`"/>
+      </v-container>
     </v-container>
   </div>
 </template>
@@ -129,10 +132,19 @@ export default Vue.extend({
     },
     value: true,
     loading: false,
-    radioGroup: undefined
+    radioGroup: undefined,
+    darkModeSwitch: true
   }),
   mounted () {
     this.onResize()
+  },
+  watch: {
+    darkModeSwitch: {
+      deep: true,
+      handler (newDarkModeSwitch) {
+        this.$vuetify.theme.dark = newDarkModeSwitch
+      }
+    }
   },
   methods: {
     handleThrottledClickButton (event: Event) {
