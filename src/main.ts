@@ -6,6 +6,7 @@ import vuetify from './plugins/vuetify'
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
 import '@mdi/font/css/materialdesignicons.css'
 import '@/directives/throttled-click'
+import '@/directives/debounced-click'
 import { listenToColorScheme } from '@/plugins/adaptive-color-scheme'
 
 Vue.config.productionTip = false
