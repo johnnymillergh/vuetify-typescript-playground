@@ -6,18 +6,15 @@ import vuetify from './plugins/vuetify'
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
 import '@mdi/font/css/materialdesignicons.css'
 import '@/directives/throttled-click'
-import { ColorSchemeUtil } from '@/utils/color-scheme-util'
+import { listenToColorScheme } from '@/plugins/adaptive-color-scheme'
 
 Vue.config.productionTip = false
 
-const vue = new Vue({
+const vueInstance = new Vue({
   router,
   store,
   vuetify,
   render: h => h(App)
 }).$mount('#app')
 
-const media = window.matchMedia('(prefers-color-scheme: dark)')
-media.addEventListener('change', () => {
-  vue.$vuetify.theme.dark = ColorSchemeUtil.isDarkMode()
-})
+listenToColorScheme(vueInstance)
