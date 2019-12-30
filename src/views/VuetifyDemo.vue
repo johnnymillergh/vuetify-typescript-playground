@@ -39,7 +39,7 @@
           <v-list-item-avatar tile size="80" color="grey"/>
         </v-list-item>
         <v-card-actions>
-          <v-btn text>Button</v-btn>
+          <v-btn text v-throttled-click:2000="handleThrottledClickButton">Button</v-btn>
           <v-btn text>Button</v-btn>
         </v-card-actions>
       </v-card>
@@ -135,6 +135,9 @@ export default Vue.extend({
     this.onResize()
   },
   methods: {
+    handleThrottledClickButton (event: Event) {
+      console.log('handleThrottledClickButton', event)
+    },
     onResize () {
       this.windowSize = { x: window.innerWidth, y: window.innerHeight }
     },
