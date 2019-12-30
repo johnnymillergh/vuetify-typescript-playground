@@ -1,3 +1,17 @@
+## [0.1.2](https://github.com/johnnymillergh/vuetify-typescript-playground/compare/v0.1.1...v0.1.2) (2019-12-30)
+
+
+### Documentation
+
+* **$README:** update README.md ([1af96fb](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/1af96fbfc29be5aa9f7cde699fa40a3d5a31548a))
+
+
+### BREAKING CHANGES
+
+* **$README:** update README.md
+
+
+
 ## [0.1.1](https://github.com/johnnymillergh/vuetify-typescript-playground/compare/v0.1.0...v0.1.1) (2019-12-27)
 
 
