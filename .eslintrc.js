@@ -46,7 +46,8 @@ module.exports = {
     'vue/html-indent': 'error',
     'vue/html-quotes': 'error',
     'vue/mustache-interpolation-spacing': 'error',
-    'vue/html-self-closing': 'error'
+    'vue/html-self-closing': 'error',
+    'no-unused-vars': 'error'
   },
   parserOptions: {
     parser: '@typescript-eslint/parser',
