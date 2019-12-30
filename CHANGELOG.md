@@ -1,3 +1,29 @@
+# [1.1.0](https://github.com/johnnymillergh/vuetify-typescript-playground/compare/v1.0.0...v1.1.0) (2019-12-30)
+
+
+### Features
+
+* **$Directive:** add customized directive `Throttled Click` ([fdd17cf](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/fdd17cfaa375126fa3344b7c3af0421ec88704b5))
+* **$Theme:** adaptive color scheme support ([7da3520](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/7da3520b436bd043c2271201976487fd56ab9145))
+* **$Theme:** add self-adaptive color scheme ([ffe12e6](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/ffe12e6a4dff2f0e9055fdf607d90f642c3a148b))
+
+
+### Performance Improvements
+
+* **$ESLint:** add new rule for ESLint ([abcb400](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/abcb4007f70400c20151b1e11c7a20ab92899b01))
+* **$package.json:** add dependencies ([0fb370e](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/0fb370e679ca699f639f32dda16487b923be91e2))
+
+
+### BREAKING CHANGES
+
+* **$Theme:** adaptive color scheme support.
+* **$Theme:** self-adaptive color scheme acording user's computer
+setting (dark or light)
+* **$Directive:** Throttled Click is a customized directive which can prevent user mouse input from triggering for several times in specific
+duration.
+
+
+
 # [1.0.0](https://github.com/johnnymillergh/vuetify-typescript-playground/compare/v0.1.2...v1.0.0) (2019-12-30)
 
 
