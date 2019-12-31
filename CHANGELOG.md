@@ -1,3 +1,25 @@
+# [1.2.0](https://github.com/johnnymillergh/vuetify-typescript-playground/compare/v1.1.0...v1.2.0) (2019-12-31)
+
+
+### Features
+
+* **$Debounce:** add `Debounced Click` directive ([91d7964](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/91d7964fbc6971843263b5ae21c25856950decdb))
+* **$Demo:** add ripple effect ([484ef04](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/484ef048ca81273b49a92c20230d01f91e494cae))
+* **$i18n:** internationalization i18n support ([f2c0c8e](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/f2c0c8e0413ffe0a2a30f5f3e8e0334e4f3e8c86))
+
+
+### Performance Improvements
+
+* **$Theme:** abstract codes of color scheme ([098378e](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/098378e62360fb29f2d11453cf51a46496b66caa))
+
+
+### BREAKING CHANGES
+
+* **$i18n:** internationalization i18n support.
+* **$Debounce:** debounced click support.
+
+
+
 # [1.1.0](https://github.com/johnnymillergh/vuetify-typescript-playground/compare/v1.0.0...v1.1.0) (2019-12-30)
 
 

@@ -2,7 +2,7 @@
   <div id="vuetify-demo-container">
     <h1 class="text-center">This is an about page</h1>
     <v-container>
-      <v-carousel cycle height="400" hide-delimiter-background show-arrows-on-hover>
+      <v-carousel cycle height="400" hide-delimiter-background show-arrows-on-hover v-ripple>
         <v-carousel-item v-for="(slide, i) in slides" :key="i">
           <v-sheet :color="colors[i]" height="100%">
             <v-row class="fill-height" align="center" justify="center">
@@ -16,17 +16,17 @@
         {{ windowSize }}
       </v-row>
       <v-row id="chip-container" justify="center">
-        <v-chip>Default</v-chip>
-        <v-chip close>Close</v-chip>
-        <v-chip outlined>Outlined</v-chip>
-        <v-chip v-model="value" filter>Filter</v-chip>
+        <v-chip>{{ $vuetify.lang.t('$vuetify.chip.default') }}</v-chip>
+        <v-chip close>{{ $vuetify.lang.t('$vuetify.chip.close') }}</v-chip>
+        <v-chip outlined>{{ $vuetify.lang.t('$vuetify.chip.outlined') }}</v-chip>
+        <v-chip v-model="value" filter>{{ $vuetify.lang.t('$vuetify.chip.filter') }}</v-chip>
         <v-chip pill>
           <v-avatar left color="red">P</v-avatar>
-          Pill
+          {{ $vuetify.lang.t('$vuetify.chip.avatar') }}
         </v-chip>
         <v-chip>
           <v-icon left color="red">mdi-account</v-icon>
-          Icon
+          {{ $vuetify.lang.t('$vuetify.chip.icon') }}
         </v-chip>
       </v-row>
       <v-card id="card-container" class="mx-auto" max-width="344" outlined>
@@ -39,8 +39,8 @@
           <v-list-item-avatar tile size="80" color="grey"/>
         </v-list-item>
         <v-card-actions>
-          <v-btn text v-throttled-click:2000="handleThrottledClickButton">Button</v-btn>
-          <v-btn text>Button</v-btn>
+          <v-btn text v-throttled-click:2000="handleThrottledClickButton">Throttle</v-btn>
+          <v-btn text v-debounced-click:2000="handleDebouncedClickButton">Debounce</v-btn>
         </v-card-actions>
       </v-card>
       <v-row align="center">
@@ -109,7 +109,9 @@
         </v-col>
       </v-row>
       <v-radio-group v-model="radioGroup">
-        <v-radio v-for="n in 3" :key="n" :label="`Radio ${n}`" :value="n"/>
+        <v-radio label="Afrikaans" value="Afrikaans"/>
+        <v-radio label="English" value="English"/>
+        <v-radio label="Simplified Chinese" value="SimplifiedChinese"/>
       </v-radio-group>
       <v-container fluid>
         <v-switch v-model="darkModeSwitch" :label="`darkModeSwitch: ${darkModeSwitch.toString()}`"/>
@@ -144,11 +146,20 @@ export default Vue.extend({
       handler (newDarkModeSwitch) {
         this.$vuetify.theme.dark = newDarkModeSwitch
       }
+    },
+    radioGroup: {
+      deep: true,
+      handler (newRadioGroup) {
+        this.$vuetify.lang.current = newRadioGroup
+      }
     }
   },
   methods: {
     handleThrottledClickButton (event: Event) {
-      console.log('handleThrottledClickButton', event)
+      console.info('handleThrottledClickButton', event)
+    },
+    handleDebouncedClickButton (event: Event) {
+      console.info('handleDebouncedClickButton', event)
     },
     onResize () {
       this.windowSize = { x: window.innerWidth, y: window.innerHeight }
