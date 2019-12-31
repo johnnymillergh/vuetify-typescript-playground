@@ -23,6 +23,7 @@ Here is the highlights of **TypeScript Playground**:
 4. Docker support.
 5. Multi-environment support.
 6. NGINX Gzip support.
+6. Support `Dark` / `Light` color scheme. Self-adaptive color scheme change.
 
 ## Usage
 

@@ -1,3 +1,24 @@
+# [1.3.0](https://github.com/johnnymillergh/vuetify-typescript-playground/compare/v1.2.0...v1.3.0) (2019-12-31)
+
+
+### Features
+
+* **$favicon:** update favicon ([4b2b966](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/4b2b966eb896fbc995390ba4219bebb3a1b0a049))
+
+
+### Performance Improvements
+
+* **$NGINX:** support persistence NGINX log ([59092d0](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/59092d0001c81d2ffe4d3674c99f427e058519f2))
+
+
+### BREAKING CHANGES
+
+* **$favicon:** Brand new favicon.
+* **$NGINX:** Support persistence NGINX log, storage NGINX log on
+local machine.
+
+
+
 # [1.2.0](https://github.com/johnnymillergh/vuetify-typescript-playground/compare/v1.1.0...v1.2.0) (2019-12-31)
 
 
