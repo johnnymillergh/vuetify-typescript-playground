@@ -12,3 +12,5 @@ services:
         ENV_ALIAS: prod
     ports:
       - 8081:80
+    volumes:
+      - /Users/johnny/docker-file-mapping/vuetify-typescript-playground/log:/var/log/nginx
