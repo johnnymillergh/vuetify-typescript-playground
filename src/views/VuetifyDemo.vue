@@ -16,17 +16,17 @@
         {{ windowSize }}
       </v-row>
       <v-row id="chip-container" justify="center">
-        <v-chip>Default</v-chip>
-        <v-chip close>Close</v-chip>
-        <v-chip outlined>Outlined</v-chip>
-        <v-chip v-model="value" filter>Filter</v-chip>
+        <v-chip>{{ $vuetify.lang.t('$vuetify.chip.default') }}</v-chip>
+        <v-chip close>{{ $vuetify.lang.t('$vuetify.chip.close') }}</v-chip>
+        <v-chip outlined>{{ $vuetify.lang.t('$vuetify.chip.outlined') }}</v-chip>
+        <v-chip v-model="value" filter>{{ $vuetify.lang.t('$vuetify.chip.filter') }}</v-chip>
         <v-chip pill>
           <v-avatar left color="red">P</v-avatar>
-          Pill
+          {{ $vuetify.lang.t('$vuetify.chip.avatar') }}
         </v-chip>
         <v-chip>
           <v-icon left color="red">mdi-account</v-icon>
-          Icon
+          {{ $vuetify.lang.t('$vuetify.chip.icon') }}
         </v-chip>
       </v-row>
       <v-card id="card-container" class="mx-auto" max-width="344" outlined>
@@ -109,7 +109,9 @@
         </v-col>
       </v-row>
       <v-radio-group v-model="radioGroup">
-        <v-radio v-for="n in 3" :key="n" :label="`Radio ${n}`" :value="n"/>
+        <v-radio label="Afrikaans" value="Afrikaans"/>
+        <v-radio label="English" value="English"/>
+        <v-radio label="Simplified Chinese" value="SimplifiedChinese"/>
       </v-radio-group>
       <v-container fluid>
         <v-switch v-model="darkModeSwitch" :label="`darkModeSwitch: ${darkModeSwitch.toString()}`"/>
@@ -143,6 +145,12 @@ export default Vue.extend({
       deep: true,
       handler (newDarkModeSwitch) {
         this.$vuetify.theme.dark = newDarkModeSwitch
+      }
+    },
+    radioGroup: {
+      deep: true,
+      handler (newRadioGroup) {
+        this.$vuetify.lang.current = newRadioGroup
       }
     }
   },
