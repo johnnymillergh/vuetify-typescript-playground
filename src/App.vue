@@ -30,7 +30,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { AppUtil } from '@/utils/app-util.ts'
+import { AppUtil } from '@/utils/app-util'
 
 export default Vue.extend({
   name: 'App',

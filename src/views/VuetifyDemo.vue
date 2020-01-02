@@ -116,12 +116,23 @@
       <v-container fluid>
         <v-switch v-model="darkModeSwitch" :label="`darkModeSwitch: ${darkModeSwitch.toString()}`"/>
       </v-container>
+      <v-form ref="form" v-model="formValidation">
+        <v-text-field label="Title" v-model="getDemoPayload.title" :rules="titleRules" clearable/>
+        <v-text-field label="Text" v-model="getDemoPayload.text" clearable/>
+        <v-text-field label="Rating" v-model="getDemoPayload.rating"/>
+        <v-text-field label="Email" v-model="getDemoPayload.email"/>
+        <v-text-field label="Domain Name" v-model="getDemoPayload.site"/>
+        <v-btn v-throttled-click="handleThrottledClickRendRequest" small>Send request</v-btn>
+      </v-form>
     </v-container>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import { vuetifyDemoApi } from '@/requests/vuetify-demo'
+// eslint-disable-next-line no-unused-vars
+import { GetDemoPayload } from '@/requests/vuetify-demo/payload/get-demo-payload'
 
 export default Vue.extend({
   name: 'VuetifyDemo',
@@ -135,10 +146,20 @@ export default Vue.extend({
     value: true,
     loading: false,
     radioGroup: undefined,
-    darkModeSwitch: true
+    darkModeSwitch: true,
+    formValidation: false,
+    getDemoPayload: new GetDemoPayload(),
+    titleRules: [
+      (v: string) => !!v || 'Title is required',
+      (v: string) => (v && (10 <= v.length || v.length <= 20)) || 'Name mustn\'t less than 10 characters and more than 20 characters!'
+    ]
   }),
   mounted () {
     this.onResize()
+    this.getDemoPayload.title = 'Title Title Title'
+    this.getDemoPayload.text = 'hello'
+    this.getDemoPayload.rating = 2
+    this.getDemoPayload.email = 'test@gmail.com'
   },
   watch: {
     darkModeSwitch: {
@@ -160,6 +181,10 @@ export default Vue.extend({
     },
     handleDebouncedClickButton (event: Event) {
       console.info('handleDebouncedClickButton', event)
+    },
+    async handleThrottledClickRendRequest () {
+      const response = await vuetifyDemoApi.getDemo(this.getDemoPayload)
+      console.info('Response', response)
     },
     onResize () {
       this.windowSize = { x: window.innerWidth, y: window.innerHeight }
