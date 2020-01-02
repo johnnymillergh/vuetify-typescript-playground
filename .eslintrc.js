@@ -47,7 +47,8 @@ module.exports = {
     'vue/html-quotes': 'error',
     'vue/mustache-interpolation-spacing': 'error',
     'vue/html-self-closing': 'error',
-    'no-unused-vars': 'error'
+    'no-unused-vars': 'error',
+    'yoda': 'off'
   },
   parserOptions: {
     parser: '@typescript-eslint/parser',
