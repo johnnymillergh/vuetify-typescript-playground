@@ -35,7 +35,7 @@
     </v-navigation-drawer>
     <v-app-bar app clipped-left color="red" dense>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
-      <!--      <v-icon class="mx-4">fab youtube</v-icon>-->
+      <v-icon class="mx-4">{{ icon.mdiYoutube }}</v-icon>
       <v-toolbar-title>
         <span class="title">{{ appName }}</span>
         <span id="version">{{ version }}</span>
@@ -62,6 +62,7 @@
 <script lang="ts">
 import { AppUtil } from '@/utils/app-util'
 import Vue from 'vue'
+import { mdiYoutube } from '@mdi/js'
 
 export default Vue.extend({
   props: {
@@ -73,6 +74,9 @@ export default Vue.extend({
     }
   },
   data: () => ({
+    icon: {
+      mdiYoutube
+    },
     drawer: null,
     items: [
       { icon: 'subscriptions', text: 'Hello World', path: '/hello-world' },
