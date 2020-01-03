@@ -3,5 +3,6 @@ import * as Axios from '@/plugins/axios'
 import { GetDemoPayload } from '@/requests/vuetify-demo/payload/get-demo-payload'
 
 export const vuetifyDemoApi = {
-  getDemo: (getDemoPayload: GetDemoPayload) => Axios.get('/api/get', getDemoPayload)
+  getDemo: (getDemoPayload: GetDemoPayload) => Axios.get('/api/getDemo', getDemoPayload),
+  delay: (delayTime: number) => Axios.get('/api/delay', delayTime)
 }
