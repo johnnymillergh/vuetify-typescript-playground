@@ -8,7 +8,7 @@ import '@mdi/font/css/materialdesignicons.css'
 import '@/directives/throttled-click'
 import '@/directives/debounced-click'
 import { listenToColorScheme } from '@/plugins/adaptive-color-scheme'
-import '@/plugins/mock'
+import '@/plugins/axios-mock-adapter'
 
 Vue.config.productionTip = false
 
