@@ -16,3 +16,9 @@ declare global {
     }
   }
 }
+
+/**
+ * A better solution would be to create a type with the intersection so that it can be reused across multiple components.
+ * @see <a href='https://stackoverflow.com/questions/52109471/typescript-in-vue-property-validate-does-not-exist-on-type-vue-element'>Stack Overflow</a>
+ */
+export type VForm = Vue & { validate: () => boolean }
