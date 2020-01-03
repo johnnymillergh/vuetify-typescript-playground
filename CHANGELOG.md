@@ -1,3 +1,31 @@
+## [1.3.1](https://github.com/johnnymillergh/vuetify-typescript-playground/compare/v1.3.0...v1.3.1) (2020-01-03)
+
+
+### Features
+
+* **$App:** use YouTube-like layout ([dd61af0](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/dd61af02e5b42ea1494558a4f4f2a616b433a1c6))
+* **$Demo:** change ripple effect ([2a221d5](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/2a221d553c225eb82453c812090dbc9e47ecc8cc))
+* **$Icon:** add dependency `@mdi/js` ([2d48f33](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/2d48f33fa8d6bc4894808e625b2c46ea97a68f89))
+* **$Toast:** new Vue plugin `Vuetify Toast` ([faf96f0](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/faf96f047a9d0a74baa0da86a0f16fd93ad724a9))
+* **$Validation:** add field validation ([9170df2](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/9170df2bf10e5be044b4744d0ce793e2eee6df12))
+
+
+### Performance Improvements
+
+* **$ClassValidator:** integrate Class Validator ([7a44a3f](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/7a44a3fd6c8f056597472f97ed0bfc4c3866e0d4))
+* **$ESLint:** update ESLint rule `yoda` ([1473f79](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/1473f797bde18668d8511429b627b24c99dc8604))
+* **$package.json:** add dependencies axios, class-validator, mock.js ([9f98264](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/9f9826484cbc6ee8e1093243f4a7087e1240c20c))
+* **$package.json:** integrate axios-mock-adapter ([f890d6f](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/f890d6f69f4926c8acec33d73e18a9ba1c7125c0))
+* **$package.json:** upgrade dependencies: vuetify@2.2.1, @typescript-eslint/eslint-plugin@2.14.0, @typescript-eslint/parser@2.14.0, @vue/cli-plugin-babel@4.1.2, @vue/cli-plugin-eslint@4.1.2, @vue/cli-plugin-router@4.1.2, @vue/cli-plugin-typescript@4.1.2, @vue/cli-plugin-unit-jest@4.1.2, @vue/cli-plugin-vuex@4.1.2, @vue/cli-service@4.1.2, eslint-plugin-vue@6.1.2, vue-cli-plugin-vuetify@2.0.3 ([4122050](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/41220506241848558edd7afd2ac2fcdc1eb98427))
+
+
+### BREAKING CHANGES
+
+* **$Icon:** support @mdi/js
+* **$App:** use YouTube-like layout
+
+
+
 # [1.3.0](https://github.com/johnnymillergh/vuetify-typescript-playground/compare/v1.2.0...v1.3.0) (2019-12-31)
 
 
