@@ -44,7 +44,7 @@
     <v-row align="center">
       <v-col class="text-center" cols="12" sm="4">
         <div class="my-2">
-          <v-btn small>Normal</v-btn>
+          <v-btn @click="handleClickSendRequest" small>Send Request</v-btn>
         </div>
         <div class="my-2">
           <v-btn small color="primary">Primary</v-btn>
@@ -119,6 +119,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { vuetifyDemoApi } from '@/requests/vuetify-demo'
 
 export default Vue.extend({
   name: 'VuetifyDemo',
@@ -163,6 +164,10 @@ export default Vue.extend({
     },
     handleClickStopLoading () {
       this.loading = !this.loading
+    },
+    async handleClickSendRequest () {
+      const response = await vuetifyDemoApi.cancelRequestTest()
+      console.info('handleClickSendRequest', response)
     }
   }
 })

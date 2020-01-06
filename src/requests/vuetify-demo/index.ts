@@ -4,5 +4,5 @@ import { GetDemoPayload } from '@/requests/vuetify-demo/payload/get-demo-payload
 
 export const vuetifyDemoApi = {
   getDemo: (getDemoPayload: GetDemoPayload) => Axios.get('/api/getDemo', getDemoPayload),
-  delay: (delayTime: number) => Axios.get('/api/delay', delayTime)
+  cancelRequestTest: () => Axios.get('/api/cancel-request-test')
 }
