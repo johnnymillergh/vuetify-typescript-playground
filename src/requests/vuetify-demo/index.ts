@@ -1,8 +1,9 @@
 import * as Axios from '@/plugins/axios'
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-unused-vars */
 import { GetDemoPayload } from '@/requests/vuetify-demo/payload/get-demo-payload'
+import { CancelRequestTestPayload } from '@/requests/vuetify-demo/payload/cancel-request-test-payload'
 
 export const vuetifyDemoApi = {
   getDemo: (getDemoPayload: GetDemoPayload) => Axios.get('/api/getDemo', getDemoPayload),
-  cancelRequestTest: () => Axios.get('/api/cancel-request-test')
+  cancelRequestTest: (cancelRequestTestPayload: CancelRequestTestPayload) => Axios.get('/api/cancel-request-test', cancelRequestTestPayload)
 }

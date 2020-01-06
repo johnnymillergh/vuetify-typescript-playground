@@ -35,7 +35,7 @@ export const cancelAndRemoveSamePendingRequest = (axiosRequestConfig: AxiosReque
     const requestToken = `${axiosRequestConfig?.url?.split('?')[0]}::${axiosRequestConfig.method}::${JSON.stringify(axiosRequestConfig.params)}`
     if (pendingRequest.requestToken === requestToken) {
       // Execute cancellation of this pending request.
-      pendingRequest.cancelExecutor(`Cancelled Axios Request. Request token: ${requestToken}`)
+      pendingRequest.cancelExecutor(`Cancelled Axios request. Request token: ${requestToken}`)
       // Remove this pending request from list.
       pendingRequestList.splice(index, 1)
     }

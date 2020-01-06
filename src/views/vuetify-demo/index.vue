@@ -120,6 +120,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import { vuetifyDemoApi } from '@/requests/vuetify-demo'
+import { CancelRequestTestPayload } from '@/requests/vuetify-demo/payload/cancel-request-test-payload'
 
 export default Vue.extend({
   name: 'VuetifyDemo',
@@ -166,8 +167,16 @@ export default Vue.extend({
       this.loading = !this.loading
     },
     async handleClickSendRequest () {
-      const response = await vuetifyDemoApi.cancelRequestTest()
-      console.info('handleClickSendRequest', response)
+      try {
+        const cancelRequestTestPayload = new CancelRequestTestPayload()
+        cancelRequestTestPayload.id = 1
+        const response = await vuetifyDemoApi.cancelRequestTest(cancelRequestTestPayload)
+        console.info('handleClickSendRequest', response)
+        this.$toast.success(response.message)
+      } catch (error) {
+        console.error('Error occurred when sending request `cancelRequestTest`!', error)
+        this.$toast.error(error.message)
+      }
     }
   }
 })
