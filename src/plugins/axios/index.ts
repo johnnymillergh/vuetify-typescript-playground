@@ -6,6 +6,7 @@
 import Axios, { AxiosRequestConfig, Canceler, ResponseType } from 'axios'
 import { validate } from 'class-validator'
 import { ClassValidationUtil } from '@/utils/class-validation-util'
+import * as Cancellation from '@/plugins/axios/cancellation'
 
 // 1. Create an axios instance.
 export const service = Axios.create({
@@ -26,41 +27,6 @@ export const service = Axios.create({
   }
 })
 
-const CancelToken = Axios.CancelToken
-const pendingRequestList: PendingRequest[] = []
-
-/**
- * Pending Request
- * @author Johnny Miller (鍾俊), e-mail: johnnysviva@outlook.com
- * @date 1/6/20 2:26 PM
- */
-interface PendingRequest {
-  /**
-   * Request token.
-   *
-   * Format: [URL]::[HTTP Method]::[Stringified Request Params]
-   *
-   * Sample: /api/cancel-request-test::get::undefined
-   */
-  requestToken: string
-  /**
-   * Cancel executor
-   */
-  cancelExecutor: Canceler
-}
-
-const cancelAndRemoveSamePendingRequest = (axiosRequestConfig: AxiosRequestConfig): void => {
-  pendingRequestList.forEach((pendingRequest, index) => {
-    const requestToken = `${axiosRequestConfig?.url?.split('?')[0]}::${axiosRequestConfig.method}::${JSON.stringify(axiosRequestConfig.params)}`
-    if (pendingRequest.requestToken === requestToken) {
-      // Execute cancellation of this pending request.
-      pendingRequest.cancelExecutor(`Cancelled Axios Request. Request token: ${requestToken}`)
-      // Remove this pending request from list.
-      pendingRequestList.splice(index, 1)
-    }
-  })
-}
-
 // 2. Request interceptor's configuration.
 service.interceptors.request.use(
   async axiosRequestConfig => {
@@ -73,12 +39,12 @@ service.interceptors.request.use(
       }
     }
     // Cancel and remove same request before sending upcoming request.
-    cancelAndRemoveSamePendingRequest(axiosRequestConfig)
-    axiosRequestConfig.cancelToken = new CancelToken((cancel: Canceler) => {
-      pendingRequestList.push({
-        requestToken: `${axiosRequestConfig?.url?.split('?')[0]}::${axiosRequestConfig.method}::${JSON.stringify(axiosRequestConfig.params)}`,
-        cancelExecutor: cancel
-      })
+    Cancellation.cancelAndRemoveSamePendingRequest(axiosRequestConfig)
+    // Configure cancelToken for request
+    axiosRequestConfig.cancelToken = new Cancellation.CancelToken((cancel: Canceler) => {
+      const requestToken = `${axiosRequestConfig?.url?.split('?')[0]}::${axiosRequestConfig.method}::${JSON.stringify(axiosRequestConfig.params)}`
+      const pendingRequest = new Cancellation.PendingRequest(requestToken, cancel)
+      Cancellation.pendingRequestList.push(pendingRequest)
     })
     return axiosRequestConfig
   },
