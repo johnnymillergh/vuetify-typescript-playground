@@ -1,3 +1,12 @@
+# [1.4.0](https://github.com/johnnymillergh/vuetify-typescript-playground/compare/v1.3.1...v1.4.0) (2020-01-07)
+
+
+### Performance Improvements
+
+* **$Axios:** avoid sending same request at the same time ([c7eb3b7](https://github.com/johnnymillergh/vuetify-typescript-playground/commit/c7eb3b7d5388aaa0b8fea4fcb6cd129c87fb6b5c))
+
+
+
 ## [1.3.1](https://github.com/johnnymillergh/vuetify-typescript-playground/compare/v1.3.0...v1.3.1) (2020-01-03)
 
 
