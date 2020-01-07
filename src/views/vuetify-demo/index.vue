@@ -44,7 +44,7 @@
     <v-row align="center">
       <v-col class="text-center" cols="12" sm="4">
         <div class="my-2">
-          <v-btn small>Normal</v-btn>
+          <v-btn @click="handleClickSendRequest" small>Send Request</v-btn>
         </div>
         <div class="my-2">
           <v-btn small color="primary">Primary</v-btn>
@@ -119,6 +119,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { vuetifyDemoApi } from '@/requests/vuetify-demo'
+import { CancelRequestTestPayload } from '@/requests/vuetify-demo/payload/cancel-request-test-payload'
 
 export default Vue.extend({
   name: 'VuetifyDemo',
@@ -163,6 +165,18 @@ export default Vue.extend({
     },
     handleClickStopLoading () {
       this.loading = !this.loading
+    },
+    async handleClickSendRequest () {
+      try {
+        const cancelRequestTestPayload = new CancelRequestTestPayload()
+        cancelRequestTestPayload.id = 1
+        const response = await vuetifyDemoApi.cancelRequestTest(cancelRequestTestPayload)
+        console.info('handleClickSendRequest', response)
+        this.$toast.success(response.message)
+      } catch (error) {
+        console.error('Error occurred when sending request `cancelRequestTest`!', error)
+        this.$toast.error(error.message)
+      }
     }
   }
 })

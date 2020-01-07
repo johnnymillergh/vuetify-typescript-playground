@@ -12,7 +12,7 @@ const routes = [
   },
   {
     path: '/hello-world',
-    name: 'hello-world',
+    // name: 'hello-world',
     // route level code-splitting
     // this generates a separate chunk (hello-world.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -28,7 +28,7 @@ const routes = [
   },
   {
     path: '/vuetify-demo',
-    name: 'vuetify-demo',
+    // name: 'vuetify-demo',
     component: Home,
     children: [
       {
@@ -39,7 +39,7 @@ const routes = [
   },
   {
     path: '/form-validation',
-    name: 'form-validation',
+    // name: 'form-validation',
     component: Home,
     children: [
       {
